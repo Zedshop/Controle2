@@ -33,13 +33,6 @@ print(onote.valeur)
 Note.afficher(onote)
 
 
-
-
-
-
-
-
-
 class Note:
   instances = []  
   def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
