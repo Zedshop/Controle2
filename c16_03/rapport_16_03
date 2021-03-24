@@ -1,0 +1,128 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.2, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
+rootdir: /home/stidsem4/iut/2021/controle/zakaria.mehdaoui/c16_03
+collected 7 items
+
+test_16_03.py F....F.                                                    [100%]
+
+=================================== FAILURES ===================================
+_____________________________ Test1603sute.test_10 _____________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_10>
+
+    def test_10(self):
+        try:
+            from .main  import Note
+        except:
+           assert False
+        try:
+            Note.vider()
+        except:
+            assert False
+        note1 = Note('elv1', 'xx', 12)
+        note1 = Note('elv1', 'yy', 13)
+        note1 = Note('elv1', 'yy', 14)
+        note1 = Note('elv2', 'zz', 13)
+        try:
+>           assert Note.moyenne('elv1') == 13
+E           TypeError: moyenne() takes 1 positional argument but 2 were given
+
+test_16_03.py:106: TypeError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_10>
+
+    def test_10(self):
+        try:
+            from .main  import Note
+        except:
+           assert False
+        try:
+            Note.vider()
+        except:
+            assert False
+        note1 = Note('elv1', 'xx', 12)
+        note1 = Note('elv1', 'yy', 13)
+        note1 = Note('elv1', 'yy', 14)
+        note1 = Note('elv2', 'zz', 13)
+        try:
+            assert Note.moyenne('elv1') == 13
+    
+            assert Note.moyenne('elv1', 'yy') == 13.5
+        except TypeError as err:
+            if 'argument' in err.args[0]:
+>               assert False, 'Probleme de parametres'
+E               AssertionError: Probleme de parametres
+E               assert False
+
+test_16_03.py:111: AssertionError
+----------------------------- Captured stdout call -----------------------------
+La moyenne de l'élève 1 est de  13.0
+La moyenne de l'élève 1 en maths est de :  12.666666666666666
+eleve1
+maths
+13
+eleve eleve1 matiere maths note 13
+[('eleve1', 'math', 13), ('eleve1', 'physique', 15), ('eleve1', 'math', 13), ('eleve1', 'eco', 12), ('eleve1', 'eco', 13), ('eleve1', 'math', 12)]
+13.0
+12.666666666666666
+12.666666666666666
+13.125
+_____________________________ Test1603sute.test_8 ______________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_8>
+
+    def test_8(self):
+        try:
+            from .main import Note
+        except ImportError:
+            assert False, "import de Note impossible"
+        try:
+>           from .main  import moyenne_Notes as mnotes
+E           ImportError: cannot import name 'moyenne_Notes' from 'c16_03.main' (/home/stidsem4/iut/2021/controle/zakaria.mehdaoui/c16_03/main.py)
+
+test_16_03.py:71: ImportError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_8>
+
+    def test_8(self):
+        try:
+            from .main import Note
+        except ImportError:
+            assert False, "import de Note impossible"
+        try:
+            from .main  import moyenne_Notes as mnotes
+        except ImportError:
+            try:
+>               from .main  import moyenne_notes as mnotes
+E               ImportError: cannot import name 'moyenne_notes' from 'c16_03.main' (/home/stidsem4/iut/2021/controle/zakaria.mehdaoui/c16_03/main.py)
+
+test_16_03.py:74: ImportError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_8>
+
+    def test_8(self):
+        try:
+            from .main import Note
+        except ImportError:
+            assert False, "import de Note impossible"
+        try:
+            from .main  import moyenne_Notes as mnotes
+        except ImportError:
+            try:
+                from .main  import moyenne_notes as mnotes
+            except ImportError:
+>               assert False, "La fonction moyenne_notes n'est pas définie"
+E               AssertionError: La fonction moyenne_notes n'est pas définie
+E               assert False
+
+test_16_03.py:76: AssertionError
+=========================== short test summary info ============================
+FAILED test_16_03.py::Test1603sute::test_10 - AssertionError: Probleme de par...
+FAILED test_16_03.py::Test1603sute::test_8 - AssertionError: La fonction moye...
+========================= 2 failed, 5 passed in 0.08s ==========================
